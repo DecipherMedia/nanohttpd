@@ -104,7 +104,7 @@ public abstract class NanoHTTPD {
     private final int myPort;
     private ServerSocket myServerSocket;
     private Set<Socket> openConnections = new HashSet<Socket>();
-    private Thread myThread;
+    public Thread myThread;
     /**
      * Pluggable strategy for asynchronously executing requests.
      */
