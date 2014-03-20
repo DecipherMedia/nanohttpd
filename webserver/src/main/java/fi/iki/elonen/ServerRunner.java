@@ -19,11 +19,19 @@ public class ServerRunner {
             System.exit(-1);
         }
 
-        System.out.println("Server started, Hit Enter to stop.\n");
+        /*System.out.println("Server started, Hit Enter to stop.\n");
 
         try {
             System.in.read();
         } catch (Throwable ignored) {
+        }*/
+	
+	// Get the server thread and wait on it.
+        try {
+            server.myThread.join();
+        } catch(InterruptedException e) {
+            System.err.println("Server interrupted:\n" + e);
+            System.exit(-1);
         }
 
         server.stop();
